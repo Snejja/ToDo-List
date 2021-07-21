@@ -1,0 +1,14 @@
+.heading {
+  font-family: 'Helvetica Neue', cursive;
+  font-size: 30px;
+  color: #142933;
+  margin: 10 auto;
+  text-align: center;
+}
+
+.emptyList {
+  font-family: 'Helvetica Neue', cursive;
+  font-size: 25px;
+  color: #142933;
+  text-align: center;
+}
