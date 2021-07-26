@@ -1,18 +1,22 @@
+import { useState } from 'react';
 import { connect } from 'react-redux';
 import { addTask } from '../../Redux/Features/Tasks';
 
 import styles from './Form-Input.module.css';
 
 const FormInput = ({ onSubmit }) => {
-  let today = new Date().toISOString().substring(0, 10);
+  const [startDate, setStartDate] = useState(new Date());
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    onSubmit(event.target.text.value, today);
+    if (event.target.text.value === '') return;
+
+    onSubmit(event.target.text.value, startDate);
+    event.target.text.value = '';
   };
 
   const onChangeDate = (event) => {
-    today = event.target.value;
+    setStartDate(event.target.valueAsDate);
   };
 
   return (
@@ -22,7 +26,7 @@ const FormInput = ({ onSubmit }) => {
           <input type='text' name='text' className={styles.text} />
           <input
             type='date'
-            value={today}
+            value={startDate.toISOString().substring(0, 10)}
             onChange={onChangeDate}
             className={styles.data}
           />

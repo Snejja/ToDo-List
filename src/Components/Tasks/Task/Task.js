@@ -1,32 +1,33 @@
 import { connect } from 'react-redux';
-import React, { useState } from 'react';
+import React from 'react';
 import cn from 'classnames';
 
 import { deleteTask, isChecked } from '../../../Redux/Features/Tasks';
+import { ReactComponent as Delete } from '../../../Icons/delete.svg';
 
 import styles from './Task.module.css';
 
 const Task = ({ task, onDelete, isChecked }) => {
-  const [checked, setChecked] = useState(false);
-
   return (
     <div className={styles.wrapper}>
       <input
         type='checkbox'
         id='activeCheck'
         className={styles.checkbox}
-        checked={checked}
-        onChange={() => isChecked(setChecked(!checked))}
+        checked={task.isChecked}
+        onChange={isChecked}
       />
       <label
         htmlFor='checkbox'
         className={cn(styles.text, {
-          [styles.textСrossOut]: checked,
+          [styles.textСrossOut]: task.isChecked,
         })}
       >
         {task.text}
       </label>
-      <button onClick={onDelete}>Delete</button>
+      <button onClick={onDelete} className={styles.button}>
+        <Delete />
+      </button>
     </div>
   );
 };
