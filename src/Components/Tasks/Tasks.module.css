@@ -12,3 +12,35 @@
   color: #142933;
   text-align: center;
 }
+
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+.calendar_inner {
+  width: 30%;
+}
+
+.task_inner {
+  width: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .calendar_inner {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .task_inner {
+    margin: 0 auto;
+    width: 100%;
+  }
+}

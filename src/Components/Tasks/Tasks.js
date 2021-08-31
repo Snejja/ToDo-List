@@ -16,7 +16,7 @@ const Tasks = ({ tasks }) => {
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.tasks_wrapper}>
+      <div className={styles.task_inner}>
         <h1 className={styles.heading}>
           Your plan for the {moment(startDate).format('dddd, MMMM Do YYYY')}
         </h1>
@@ -26,7 +26,7 @@ const Tasks = ({ tasks }) => {
           <p className={styles.emptyList}>Add the task to your list</p>
         )}
       </div>
-      <div className={styles.calendar_wrapper}>
+      <div className={styles.calendar_inner}>
         <Calendar setStartDate={setStartDate} startDate={startDate} />
       </div>
     </div>

@@ -2,14 +2,9 @@
 .data,
 .submit {
   padding: 0;
-  margin-right: 20px;
+  margin-top: 5px;
   border: 2px solid #142933;
   border-radius: 3px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  -khtml-border-radius: 3px;
-
-  height: 25px;
 
   color: rgb(109, 109, 109);
   font-size: 16px;
@@ -18,15 +13,46 @@
   background: rgba(255, 248, 240, 0.952) !important;
 }
 
+.wrapper {
+  display: flex;
+  align-items: flex-start;
+
+  padding-top: 20px;
+}
+
 .text {
   outline: none;
   width: 350px;
+  height: 25px;
+
+  margin-right: 20px;
 }
 
 .data {
   width: 150px;
+  height: 25px;
+
+  margin-right: 20px;
 }
 
 .submit {
   width: 90px;
+  height: 29px;
+}
+
+@media screen and (max-width: 800px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: flex-start;
+
+    padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .text {
+    width: 280px;
+  }
 }

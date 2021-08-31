@@ -1,7 +1,7 @@
 .wrapper {
-  border: 1px solid #01614e;
+  border: 1px solid #64a26b;
   padding: 20px;
-  margin: 5px auto;
+  margin: 10px 15px;
 
   display: flex;
   justify-content: left;
@@ -26,4 +26,9 @@
 .textСrossOut {
   text-decoration: line-through;
   color: rgb(202, 202, 202);
+}
+
+.button {
+  border: none;
+  background: none;
 }
